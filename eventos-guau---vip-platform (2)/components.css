@@ -1,0 +1,46 @@
+/* --- BUTTONS --- */
+.btn {
+    padding: 1rem 1.5rem; border-radius: 1rem; font-weight: 900; font-size: 0.85rem;
+    cursor: pointer; border: none; transition: var(--transition); display: inline-flex; 
+    align-items: center; gap: 0.8rem; text-transform: uppercase; letter-spacing: 1px;
+}
+.btn-primary { background: var(--primary); color: #000; box-shadow: 0 4px 15px rgba(255, 204, 2, 0.2); }
+.btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); }
+.btn-primary:disabled { background: #10b981; color: white; cursor: default; transform: none; box-shadow: none; }
+
+.btn-outline { background: #ffffff; color: var(--text); border: 2px solid #f1f5f9; }
+.btn-outline:hover { background: #f8fafc; border-color: #e2e8f0; }
+
+.btn-full { width: 100%; justify-content: center; }
+
+/* --- MODALS (CON SCROLL) --- */
+.modal-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(10px);
+    display: flex; align-items: center; justify-content: center; z-index: 2000;
+    padding: 1rem;
+}
+.modal-content {
+    background: white; border-radius: 2rem; width: 100%; max-width: 700px;
+    max-height: 90vh; overflow-y: auto; position: relative; 
+    box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.3);
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary) #f1f5f9;
+}
+/* Scrollbar para Webkit */
+.modal-content::-webkit-scrollbar { width: 6px; }
+.modal-content::-webkit-scrollbar-track { background: #f1f5f9; }
+.modal-content::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 10px; }
+
+.modal-close { position: absolute; top: 1.5rem; right: 1.5rem; cursor: pointer; font-size: 2.5rem; line-height: 1; z-index: 10; transition: 0.2s; }
+.modal-close:hover { color: var(--primary-dark); transform: scale(1.1); }
+
+/* --- CARDS --- */
+.card { background: var(--white); border-radius: var(--radius-lg); padding: 2.5rem; border: 1px solid rgba(0,0,0,0.03); box-shadow: var(--shadow); }
+
+/* --- INPUTS --- */
+input, textarea, select {
+    width: 100%; padding: 1.1rem 1.4rem; border-radius: 1rem; border: 2px solid #f1f5f9;
+    background: #ffffff; font-family: inherit; font-size: 1rem; transition: var(--transition);
+}
+input:focus { outline: none; border-color: var(--primary); background: #fffdf5; }

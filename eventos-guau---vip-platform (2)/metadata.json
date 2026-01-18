@@ -1,0 +1,8 @@
+{
+  "name": "Eventos GUAU - VIP Platform",
+  "description": "Premium dog training management platform with advanced behavioral health tracking, personalized weekly assignments, live sessions, and integrated Redsys payments.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}

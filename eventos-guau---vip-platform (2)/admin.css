@@ -1,0 +1,14 @@
+/* --- ADMIN TABS --- */
+.tab-btn {
+    flex: 1; padding: 1.2rem; border: none; background: none;
+    font-weight: 800; font-size: 0.75rem; color: var(--text-muted);
+    cursor: pointer; border-bottom: 3px solid transparent;
+    transition: var(--transition);
+}
+.tab-btn:hover { background: rgba(52, 51, 68, 0.05); }
+.tab-btn.active { color: var(--text); border-bottom-color: var(--primary); background: white; }
+
+.tab-pane { display: none; }
+.tab-pane.active { display: block; animation: fadeIn 0.3s ease; }
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }

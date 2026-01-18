@@ -1,0 +1,31 @@
+# Security: Block access to .txt, .sql, and sensitive files
+<FilesMatch "\.(txt|sql|log)$">
+    Order deny,allow
+    Deny from all
+</FilesMatch>
+
+# Forzar UTF-8 global
+AddDefaultCharset UTF-8
+<IfModule mod_mime.c>
+    AddCharset UTF-8 .html .js .css .php .json
+</IfModule>
+
+# Allow access to README.txt if needed (optional)
+<Files "README.txt">
+    Allow from all
+</Files>
+
+# Redirect all traffic to index.html for SPA if path doesn't exist
+Options -MultiViews
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.html [L]
+
+# PHP configuration
+<IfModule mod_php8.c>
+    php_value session.cookie_httponly 1
+    php_value session.use_only_cookies 1
+    php_value session.cookie_secure 1
+    php_value default_charset "UTF-8"
+</IfModule>
